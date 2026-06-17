@@ -19,8 +19,16 @@ import AuctionListPage from './pages/auctions/AuctionListPage';
 import AuctionDetailPage from './pages/auctions/AuctionDetailPage';
 import MapExplorerPage from './pages/map/MapExplorerPage';
 
+// Pages - Profile
+import ProfilePage from './pages/profile/ProfilePage';
+import OrdersPage from './pages/profile/OrdersPage';
+import NotificationsPage from './pages/profile/NotificationsPage';
+
 // Pages - Dashboard
 import SellerDashboard from './pages/seller/SellerDashboard';
+import SellerProductsPage from './pages/seller/SellerProductsPage';
+import SellerAuctionsPage from './pages/seller/SellerAuctionsPage';
+import SellerTransactionsPage from './pages/seller/SellerTransactionsPage';
 import AdminDashboard from './pages/admin/AdminDashboard';
 
 function App() {
@@ -40,6 +48,9 @@ function App() {
                 <Route path="auctions" element={<AuctionListPage />} />
                 <Route path="auctions/:id" element={<AuctionDetailPage />} />
                 <Route path="map" element={<MapExplorerPage />} />
+                <Route path="profile" element={<ProfilePage />} />
+                <Route path="profile/orders" element={<OrdersPage />} />
+                <Route path="profile/notifications" element={<NotificationsPage />} />
                 
                 {/* Fallback */}
                 <Route path="*" element={<Navigate to="/" replace />} />
@@ -48,6 +59,9 @@ function App() {
               {/* Seller Routes */}
               <Route path="/seller" element={<DashboardLayout allowedRoles={['SELLER']} />}>
                 <Route index element={<SellerDashboard />} />
+                <Route path="products" element={<SellerProductsPage />} />
+                <Route path="auctions" element={<SellerAuctionsPage />} />
+                <Route path="transactions" element={<SellerTransactionsPage />} />
               </Route>
 
               {/* Admin Routes */}

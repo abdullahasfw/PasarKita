@@ -177,6 +177,12 @@ export function Navbar() {
                    <Link to="/seller" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Dashboard Toko</Link>
                 )}
                 <Link to="/profile" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Profil Saya</Link>
+                {user.role === 'BUYER' && (
+                   <Link to="/profile/orders" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Pesanan Saya</Link>
+                )}
+                <Link to="/profile/notifications" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                   Notifikasi {unreadCount > 0 && `(${unreadCount})`}
+                </Link>
                 <button onClick={handleLogout} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-red-600 hover:bg-red-50">Keluar</button>
               </div>
             </div>
